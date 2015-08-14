@@ -1,0 +1,115 @@
+
+
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header">
+    <h1 class="title">
+      {{ action }} Account
+    </h1>
+    <div class="buttons">
+      <button class="right button button-clear" ng-click="closeAccountModal()">
+      Close
+      </button>
+    </div>
+    <div class="buttons">
+      <button ng-hide="isAdd" ng-click="confirmDeleteAccount(account)" class="button button-icon icon ion-trash-a">
+      </button>
+    </div>
+  </ion-header-bar>
+  <ion-content style="" class="has-header" scroll="true" padding="true">
+    <form name="AccountForm" novalidate="" ng-submit="saveAccount(AccountForm)">
+      <div class="list list-inset">
+        <label class="item item-input item-floating-label" ng-class="{ 'has-error' : AccountForm.name.$invalid && AccountForm.$submitted}">
+        <span class="input-label">Name</span>
+        <input name="name" ng-model="account.name"  placeholder="Name" type="text" required >
+        </label>
+        <div class="error-container" ng-show="AccountForm.name.$error && AccountForm.$submitted">
+          <div ng-show="AccountForm.name.$error.required">
+            <div class="error"><i class="ion-information-circled"></i>  Account's name is required.</div>
+          </div>
+        </div>
+        <label class="item item-input item-floating-label"  ng-class="{ 'has-error' : AccountForm.contact.$invalid && AccountForm.$submitted}">
+        <span class="input-label">Contact</span>
+        <input name="contact"  placeholder="Contact" ng-pattern="/^\d+$/" ng-model="account.contact"  type="tel"  ng-minlength="5" ng-maxlength="10"   required >
+        </label>
+        <div class="error-container" ng-show="AccountForm.contact.$error && AccountForm.$submitted" ng-messages="AccountForm.contact.$error">
+          <div ng-messages-include="error-list.html"></div>
+        </div>
+        <label class="item item-input item-floating-label">
+        <span class="input-label">Address</span>
+        <textarea ng-model="account.address" name="address" placeholder="Address"> </textarea>
+        </label> 
+        <label class="item item-input item-select" ng-class="{'has-error' : AccountForm.type.$invalid && AccountForm.$submitted}">
+          <div class="input-label">
+            Type
+          </div>
+          <select name='type' required ng-model="account.type"
+            ng-options="obj.id as obj.name for obj in AccountFormTypeOptions">
+          </select>
+        </label>
+        <div class="error-container" ng-show="AccountForm.type.$error && AccountForm.$submitted" ng-messages="AccountForm.type.$error">
+          <div ng-messages-include="error-list.html"></div>
+        </div>
+        <!--           
+          <label class="item item-input item-floating-label" ng-class="{ 'has-error' : AccountForm.createdat.$invalid && AccountForm.$submitted}">
+          <span class="input-label">Created At</span>
+          <input type="date" name="createdat"  placeholder="created at" ng-model="account.Date">
+          </label>
+          <div class="error-container" ng-show="AccountForm.createdat.$error && AccountForm.$submitted" ng-messages="AccountForm.createdat.$error">
+             <div ng-messages-include="error-list.html"></div>
+          </div>-->
+        <label class="item item-input item-select" ng-class="{ 'has-error' : AccountForm.status.$invalid && AccountForm.$submitted}">
+        <span class="input-label">Status</span>              
+        <select placeholder="Status" name="status"  ng-model="account.status" required  ng-options="obj.id as obj.name for obj in AccountFormStatusOptions">
+        </select>
+        </label>
+        <div class="error-container" ng-show="AccountForm.status.$error && AccountForm.$submitted" ng-messages="AccountForm.status.$error">
+          <div ng-messages-include="error-list.html"></div>
+        </div>
+        <label class="item item-input item-floating-label" ng-class="{ 'has-error' : AccountForm.email.$invalid && AccountForm.$submitted}">
+        <span class="input-label">Email</span>
+        <input placeholder="Email" name="email" ng-model="account.email"  type="email">
+        </label>
+        <div class="error-container" ng-show="AccountForm.email.$error && AccountForm.$submitted" ng-messages="AccountForm.email.$error">
+          <div ng-messages-include="error-list.html"></div>
+        </div>
+        <label class="item item-input item-floating-label" ng-class="{ 'has-error' : AccountForm.note.$invalid && AccountForm.$submitted}">
+        <span class="input-label">Note</span>
+        <textarea placeholder="Note" name="note" ng-model="account.note" > </textarea>
+        </label> 
+        <div class="error-container" ng-show="AccountForm.note.$error && AccountForm.$submitted" ng-messages="AccountForm.note.$error">
+          <div ng-messages-include="error-list.html"></div>
+        </div>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive activated">
+        Save
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+<script id="error-list.html" type="text/ng-template">  
+  <div class="error" ng-message="required">
+    <i class="ion-information-circled"></i> 
+    This field is required!
+  </div>
+  <div class="error" ng-message="minlength">
+    <i class="ion-information-circled"></i> 
+    <!--Minimum length of this field is 5 characters!-->
+    Invalid length
+  </div>
+  <div class="error" ng-message="maxlength">
+    <i class="ion-information-circled"></i> 
+    <!--Maximum length of this field is 20 characters!-->
+    Invalid length
+  </div>
+  <div class="error" ng-message="pattern">
+    <i class="ion-information-circled"></i> 
+    Invalid characters
+  </div>  
+  <div class="error" ng-message="email">
+    <i class="ion-information-circled"></i> 
+    Invalid email
+  </div>
+</script>
+

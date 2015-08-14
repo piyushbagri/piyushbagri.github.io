@@ -1,0 +1,28 @@
+<header md-page-header>
+  <md-toolbar class="simple-header">
+  		<div class="md-toolbar-tools">
+		<md-button ng-click="toggleSidenav('left')" class="md-icon-button md-tools" aria-label="Go Back"><i class="ion-navicon"></i></md-button>            
+      	<md-button ng-click="goBackSingle();" class="md-icon-button md-tools" aria-label="Go Back"><i class="ion-android-arrow-back"></i></md-button>
+    		<h3 class="md-toolbar-tools">{{title_head}}</h3>      
+		<md-button ng-click="showAccountDailog($event)" class="md-icon-button md-tools" aria-label="Add Account"><i class="ion-plus"></i></md-button>             
+      </div>
+  </md-toolbar>
+</header>
+<md-content layout="column" flex class="md-padding has-header">
+	<md-card>
+       
+      <md-list>
+         <md-list-item ng-repeat="account in accounts" ng-click="showAccount(account);" >
+          	<img ng-src="{{ account.image }}" class="md-avatar"  alt="{{account.name}}"/>
+            <div class="md-list-item-text">
+                <h3>{{account.name}}</h3>
+           		<h4>{{ account.contact }}</h4>
+          		<p>{{ account.address }}</p>  
+          </div>             
+         </md-list-item>
+   	</md-list>
+   </md-card>
+    
+    
+
+</md-content>

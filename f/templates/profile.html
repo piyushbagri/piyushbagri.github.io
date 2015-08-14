@@ -1,0 +1,35 @@
+<header md-page-header>
+  <div md-header-picture style="background-image:url(img/profile.jpg)"></div>
+  <md-toolbar scroll>
+    <div class="md-toolbar-tools">
+      <md-button ng-click="goBackSingle();" class="md-icon-button md-tools" aria-label="Go Back"><i class="ion-android-arrow-back"></i></md-button>
+      <h2 md-header-title flex>Profile</h2>
+      <md-button class="md-icon-button md-tools" aria-label="More"><i class="ion-android-more-vertical"></i></md-button>
+    </div>
+  </md-toolbar>
+ <div class="main-fab"><md-button aria-label="Float Action Button" class="md-fab md-accent"><i class="ion-android-star"></i></md-button></div>
+</header> 
+<br /><br />
+<section id="page-section">
+   <md-content>
+     <md-list>
+        <md-divider></md-divider>
+        <md-list-item class="md-2-line" ng-repeat="phone in phones">
+           <md-button ng-if="$index === 0" class="md-icon-button md-primary md-tools"><i class="ion-android-call"></i></md-button>
+           <div class="md-list-item-text" ng-class="{'md-offset': $index != 0 }">
+             <h3> {{ phone.number }} </h3>
+             <p> {{ phone.type }} </p>
+           </div>
+      	</md-list-item>
+        <md-divider></md-divider>
+        <md-list-item class="md-2-line" ng-repeat="email in Emails">
+           <md-button ng-if="$index === 0" class="md-icon-button md-primary md-tools"><i class="ion-android-mail"></i></md-button>
+           <div class="md-list-item-text" ng-class="{'md-offset': $index != 0 }">
+             <h3> {{ email.number }} </h3>
+             <p> {{ email.type }} </p>
+           </div>
+      	</md-list-item>
+         <md-divider></md-divider>
+   	</md-list>
+   </md-content>
+</section>

@@ -1,11 +1,11 @@
 {
   "ProjectName": "f",
-  "ProjectGuid": "c0887e2b-bcfd-4481-98d6-c26cb35c9f8b",
+  "ProjectGuid": "bdbc34cb-01d3-4bcc-a7b1-c032d31b18a9",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.f",
-  "DisplayName": "f",
+  "AppIdentifier": "com.telerik.hundim",
+  "DisplayName": "hundi m",
   "Author": "",
-  "Description": "f",
+  "Description": "hundi m",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -32,10 +32,10 @@
     "ID_CAP_WEBBROWSERCOMPONENT"
   ],
   "WP8Requirements": [],
-  "WP8PublisherID": "{46ed052b-53e4-46a4-bcbd-cd3ddcce78d1}",
-  "WP8ProductID": "{5cfafa0e-da30-4287-9e8f-58760e41585a}",
+  "WP8PublisherID": "{3b0a778f-6baa-4bf5-bff1-272cd1233ecb}",
+  "WP8ProductID": "{02d7ec55-9477-4afb-ab54-31f9fb85b3de}",
   "WPSdk": "8.0",
-  "WP8PackageIdentityName": "1234Telerik.f",
+  "WP8PackageIdentityName": "1234Telerik.hundim",
   "WP8WindowsPublisherName": "CN=Telerik",
   "WP8SupportedResolutions": [
     "ID_RESOLUTION_WVGA",
